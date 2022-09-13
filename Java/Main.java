@@ -10,14 +10,10 @@ public class Main {
 
         System.out.println(printT);
 
-        
-
-        p.setDataDeNacimento("04/09/2000");
+        //p.setDataDeNacimento("04/09/2000");
         System.out.println(p.dataDeNacimento);
 
-        
-
-        long idade = p.pegarIdade(p.dataDeNacimento);
+        String idade = p.pegarIdade(p.dataDeNacimento);
         System.out.println("Essa pessoa tem " + idade + " anos.");
     }     
 }

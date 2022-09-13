@@ -70,7 +70,7 @@ public class Pessoa {
         return localDate;
     }
 
-    public long pegarIdade(String dataDeNacimento){
+    public String pegarIdade(String dataDeNacimento){
         LocalDate hj = LocalDate.now();
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -78,7 +78,9 @@ public class Pessoa {
 
         Period periodo = Period.between(localDate, hj);
         long meses = periodo.toTotalMonths();
-        long resultados = meses / 12;
+        long resultadoLong = meses / 12;
+
+        String resultados = Long.toString(resultadoLong);
 
         return resultados;
     }
