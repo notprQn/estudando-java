@@ -30,8 +30,6 @@ public class Menu{
                 System.out.print(i+1 + " - "  + main.opicao.get(i) + "\n");
             }
             System.out.println("Escoha sua opção: ");
-            System.out.println(main.opicao);
-            System.out.println(main.opicao.size());
 
             int escolheu = sc.nextInt();
 
