@@ -40,4 +40,16 @@ public class Mapa {
 			 Destino.addCaminho(Origem, distancia);
 		}
 	}
+	public boolean Vizinho(String a, String b) {
+		boolean retorno = false;
+		
+		Cidade Origem = Buscar(a);
+		Cidade Destino = Buscar(b);
+		
+		if(Origem != null && Destino != null) {
+			retorno = (Origem.Vizinho(Destino.Nome) || Destino.Vizinho(Origem.Nome));		
+		}
+		
+		return retorno;
+	}
 }
