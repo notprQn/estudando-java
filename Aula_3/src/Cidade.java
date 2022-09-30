@@ -24,4 +24,16 @@ public class Cidade {
 	public void addCaminho(Cidade destino, int distancia) {
 		Caminhos.add(new Caminho(this, destino, distancia));
 	}
+	public boolean Vizinho(String a) {
+		boolean retorno = false;
+		
+		for(Caminho Item: Caminhos) {
+			if(Item.Destino.Nome.equals(a)) {
+				retorno = true;
+				break;
+			}
+		}
+		
+		return retorno;
+	}
 }
