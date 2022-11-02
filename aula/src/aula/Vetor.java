@@ -3,36 +3,52 @@ package aula;
 import java.util.ArrayList;
 
 public class Vetor {
-	ArrayList<Integer> valor = new ArrayList<Integer>(4);
-	public int indice = 0;
+	ArrayList<Integer> valor;
+	public int valor_max = 0;
 	
-	void add(int i) {
-		if(indice >= 4) {
-			System.out.println("Array cheio");
-			
+	Vetor(){
+		valor = new ArrayList<Integer>(4);
+		valor_max = 4;
+	}
+
+	Vetor(int tamanho){
+		valor = new ArrayList<Integer>(tamanho);
+		valor_max = tamanho;
+	}
+
+	void add(int num) {
+		if(valor.size() < valor_max) {
+			valor.add(num);		
 		}else {
-			valor.add(i);
-			indice++;
+			System.out.println("Esse array chegou na sua capacidade maxima de " + valor_max);
 		}
 	}
 	
-	void add_at(int p, int i) {
-		valor.add(p, i);
+	void add_at(int pos, int num) {
+		if(pos < valor.size()){
+			if(valor.get(pos) != null){
+				valor.set(pos, num);
+			} else {
+				valor.add(pos, num);
+			}
+		} else {
+			System.out.println("Essa posição não existe.");
+		}	
 	}
 	
-	int valor_posicao(int i) {
-		if(i >= valor.size() || i < 0) {
+	int valor_posicao(int num) {
+		if(num >= valor.size() || num < 0) {
 			return 0;
 		} else {
-			return valor.get(i);
+			return valor.get(num);
 		}
 	}
 	
-	boolean valor_contem(int index) {
+	boolean valor_contem(int pos) {
 		boolean retorno = false;
 		
 		for(int i = 0; i < valor.size(); i++) {
-			if(valor.contains(index)) {
+			if(valor.contains(pos)) {
 				retorno = true;
 			} else {
 				retorno = false;
