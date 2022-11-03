@@ -32,7 +32,7 @@ public class Vetor {
 				valor.add(pos, num);
 			}
 		} else {
-			System.out.println("Essa posição não existe.");
+			System.out.println("Essa posicao nao existe.");
 		}	
 	}
 	
